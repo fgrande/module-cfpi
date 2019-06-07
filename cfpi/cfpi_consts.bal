@@ -1,0 +1,1 @@
+final string CF_ERRCODE = "CF Generic Error";

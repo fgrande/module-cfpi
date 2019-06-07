@@ -1,0 +1,7 @@
+[project]
+org-name = "f.grande"
+version = "0.0.1"
+license = "Apache-2.0"
+authors = ["F.Grande"]
+repository = "https://github.com/wso2-ballerina/module-twitter"
+keywords = ["ballerina", "PIVA", "CodFisc", "Codice Fiscale", "Partita IVA"]
