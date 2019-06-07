@@ -1,15 +1,16 @@
-// CFUtils Class
+import ballerina/io;
+// cfUtils Class
 
-# VAT Code utilities class
+# Fiscal Code utilities class
 public type cfUtils object {
    
     public function __init()
     {
     }
 
-    # Check validity of italian VAT Code
+    # Check validity of italian Fiscal Code
     # 
-    # + pCF - VAT Code
+    # + pCF - Fiscal Code
     # + return - Boolean, true if is valid
     public function checkcf(string pCF) returns boolean|error;
 };
@@ -25,6 +26,9 @@ public function cfUtils.checkcf(string pCF) returns boolean|error
         error err = error(CF_ERRCODE, { message: "Errore nel controllo del Codice Fiscale : " + tCF });
         return err;
     } else {
+
+        isCF = (cfChecksum(tCF) == tCF.substring(15, 16)) ? true : false;
+
         return isCF;
     }
 }

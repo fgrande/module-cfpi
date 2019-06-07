@@ -19,8 +19,20 @@ function testValidCF() {
 function testInvalidCF() {
     
     cfUtils _utl = new;
-    string _cf = "GRNFBA71S21F2052";
+    string _cf = "GRNFBA71S21F205X";
 
     boolean|error isValid = _utl.checkcf(_cf);
-    test:assertEquals(isValid, false, msg = "CF is valid !");
+    test:assertEquals(isValid, false, msg = "This shoud be invalid !");
 }
+
+
+@test:Config
+function testValidVAT() {
+    
+    piUtils _utl = new;
+    string _vat = "02319940017";
+
+    boolean|error isValid = _utl.checkvat(_vat);
+    test:assertEquals(isValid, true, msg = "VAT is not valid !");
+}
+
