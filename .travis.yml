@@ -1,3 +1,6 @@
+env:
+- CHANNEL=download
+
 script:
 - BALLERINA_VERSION=${VERSION:-0.991.0}
 - echo -e "\033[36m${BALLERINA_VERSION}\033[m"
@@ -13,6 +16,8 @@ script:
 
 - echo -e "\033[36m${DOWNLOAD_LOCATION}/${DOWNLOAD_CHANNEL}/${BALLERINA_VERSION}${RC:-}/${DISTRIBUTION_NAME}${RC:-}.zip\033[m"
 - wget ${DOWNLOAD_LOCATION}/${DOWNLOAD_CHANNEL}/${BALLERINA_VERSION}${RC:-}/${DISTRIBUTION_NAME}${RC:-}.zip
+
+- echo -e "\033[36mShould be : https://product-dist.ballerina.io/downloads/0.991.0/ballerina-0.991.0.zip\033[m"
 
 - unzip -q ${DISTRIBUTION_NAME}${RC:-}.zip
 
